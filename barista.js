@@ -14,12 +14,13 @@ class Barista {
     }
     makeOrder() {
         const order = this.makeList.shift(); // A1형태
-        const [user, menu] = order.split('');
+        const regexp = /(?=\d)/g;
+        const [user, menu] = order.split(regexp);
         const indexTime = 1;
         const menuTime = MENU[menu][indexTime];
-        setTimeout(()=>{
-            console.log(`${MENU[menu][0]}를 완성했습니다.`)
-        },menuTime)
+        setTimeout(() => {
+            console.log(`${MENU[menu][0]}를 완성했습니다.`);
+        }, menuTime);
         this.makeCount--;
     }
 }

@@ -27,7 +27,7 @@ class Cafe {
     }
     run(takeOrder) {
         this.takeOrder(takeOrder);
-        console.log(this.pullOrder());
+        // console.log(this.pullOrder());
     }
     print() {
         console.log(this.orderList);
