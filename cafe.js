@@ -1,8 +1,10 @@
 const { Barista } = require('./barista');
+const { Board } = require('./board');
 class Cafe {
     constructor() {
         this.orderList = [];
         this.Barista = new Barista();
+        this.Board = new Board();
     }
     takeOrder(order) {
         this.orderList.push(...order);
@@ -23,6 +25,7 @@ class Cafe {
         if (this.Barista.isAcceptable()) {
             const order = this.orderList.shift();
             this.Barista.addMakeList(order);
+            this.Board.getOrder(order);
         }
     }
     run(takeOrder) {
